@@ -1,7 +1,7 @@
 help:
 	@echo "Secret Files"
 	@echo " - make decrypt         decripta ${TS_FILE}.dat"
-	@echo " - make encript         encripta ${TS_FILE}"
+	@echo " - make encrypt         encripta ${TS_FILE}"
 
 list:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1 }}' | \
@@ -14,6 +14,11 @@ TS_FILE=top-secret-file.md
 # 'private' task for echoing instructions
 _pwd_prompt:
 	@echo "Contact paul.messina@gmail.com for the password."
+
+# crea Archivo Inicial
+create:
+	echo "# Top Secret File" > ${TS_FILE}
+	echo " Very Secret Infomartion" >> ${TS_FILE}
 
 # des-encripta y borra el encriptado
 decrypt: _pwd_prompt
