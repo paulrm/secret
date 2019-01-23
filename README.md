@@ -5,3 +5,6 @@ manejo de archivos secretos
 1. Ejecutar `make create` para crear un archivo de ejemplo
 1. Ejecutar `make encrypt` para encriptar
 1. Ejecutar `make decrypt` para desencriptar
+
+# Otras opciones 
+- https://github.com/evpo/EncryptPad CLI + GUI
